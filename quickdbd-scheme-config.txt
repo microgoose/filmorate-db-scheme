@@ -1,0 +1,51 @@
+film
+-
+film_id PK int
+name string
+description string
+rate int
+mpa_rating_id int FK >- mpa_rating.mpa_rating_id
+release_date date
+duration int
+
+user
+-
+user_id PK int
+email unique string
+login unique string
+name NULL string
+birthday date
+
+user_film_like
+-
+user_film_like_id PK int
+user_id int FK >- user.user_id
+film_id int FK >- film.film_id
+
+user_friend
+-
+user_friend_id PK int
+user_id int FK >- user.user_id
+friend_id int FK >- user.user_id
+friend_status_id int FK >- friend_status.friend_status_id
+
+genre
+-
+genre_id PK int
+name string unique
+
+film_genre
+-
+film_genre_id PK int
+film_id int FK >- film.film_id
+genre_id int FK >- genre.genre_id
+
+mpa_rating
+-
+mpa_rating_id PK int
+name string unique
+
+friend_status
+-
+friend_status_id PK int
+name string unique
