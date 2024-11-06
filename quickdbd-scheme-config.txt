@@ -18,13 +18,11 @@ birthday date
 
 user_film_like
 -
-user_film_like_id PK int
 user_id int FK >- user.user_id
 film_id int FK >- film.film_id
 
 user_friend
 -
-user_friend_id PK int
 user_id int FK >- user.user_id
 friend_id int FK >- user.user_id
 friend_status_id int FK >- friend_status.friend_status_id
@@ -36,7 +34,6 @@ name string unique
 
 film_genre
 -
-film_genre_id PK int
 film_id int FK >- film.film_id
 genre_id int FK >- genre.genre_id
 
